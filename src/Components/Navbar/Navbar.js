@@ -5,10 +5,10 @@ import './Navbar.css';
 
 const Navbar = () => (
 	<nav>
-		<div>
+		<div className="logoContainer">
 			<img src={logo} alt="" id="imagen" />
 		</div>
-		<h1>Reci Importaciones</h1>
+		{/* <h1>Reci Importaciones</h1> */}
 		<div id="nav-ul">
 			<a href="#inicio">Inicio</a>
 			<a href="#productos">Productos</a>
