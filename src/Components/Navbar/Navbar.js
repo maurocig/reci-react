@@ -1,10 +1,10 @@
 import React from "react";
 import logo from '../../assets/reci.png'
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import './Navbar.css';
+import Carrito from "../Carrito/Carrito";
 
 const Navbar = () => (
-	<nav>
+	<nav >
 		<div className="logoContainer">
 			<img src={logo} alt="" id="imagen" />
 		</div>
@@ -14,10 +14,10 @@ const Navbar = () => (
 			<a href="#productos">Productos</a>
 			<a href="#nosotros">Nosotros</a>
 			<a href="#contacto">Contacto</a>
-			<ShoppingCartIcon color="info" sx={{ fontSize: 30 }} />
+			<Carrito />
 		</div>
 		{/* <a href="#!" id="carrito"><img src={ShoppingCartIcon} alt="" /></a> */}
-	</nav>
+	</nav >
 )
 
 export default Navbar;

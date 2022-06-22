@@ -6,6 +6,7 @@ import Item from './Components/Item';
 import Input from './Components/Input';
 import Title from './Components/Title';
 import { useState } from 'react';
+import ItemListContainer from './Components/ItemListContainer';
 
 // Componente contenedor / State components
 function App({ name, children, app, saludaPapa, }) {
@@ -16,7 +17,8 @@ function App({ name, children, app, saludaPapa, }) {
 
 	return (
 		<div className="App">
-			<Navbar />
+			<Navbar style={{ backgroundColor: 'blue' }} />
+			<ItemListContainer greeting="Esto es un mensaje para cumplir con la consigna." />
 			<Header />
 
 			<button onClick={saludoYoHijo}>Saludar hijo</button>
