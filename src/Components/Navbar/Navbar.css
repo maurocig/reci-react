@@ -1,0 +1,40 @@
+nav {
+	/* display: flex; */
+	/* height: 300px; */
+	width: 80%;
+	align-items: space-between;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	padding: 20px 10%;
+	box-shadow: 2px 1px 3px 4px rgba(0 0 0 10%);
+
+}
+
+nav #nav-ul {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 50%;
+}
+
+nav #nav-ul a {
+	/* padding: 20px; */
+	text-decoration: none;
+}
+
+nav .logoContainer {
+	width: 40px;
+	display: flex;
+	align-content: center;
+	align-items: center;
+
+}
+
+nav .logoContainer img {
+	height: 40px;
+}
+
+ShoppingCartIcon {
+	width: 100px;
+}

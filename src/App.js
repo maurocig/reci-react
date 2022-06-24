@@ -7,7 +7,7 @@ import Input from './Components/Input';
 import Title from './Components/Title';
 import { useState } from 'react';
 import ItemListContainer from './Components/ItemListContainer';
-import { MiComponente } from './Components/miComponente';
+import { Contador } from './Components/Contador';
 
 // Componente contenedor / State components
 function App({ name, children, app, saludaPapa, }) {
@@ -37,7 +37,7 @@ function App({ name, children, app, saludaPapa, }) {
 				})
 			}
 
-			<MiComponente />
+			<Contador />
 
 			{children}
 
