@@ -1,7 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
 import Navbar from './Components/Navbar/Navbar.js';
-import Header from './Components/Header/Header';
 import Item from './Components/Item';
 import Input from './Components/Input';
 import Title from './Components/Title';
@@ -20,7 +19,6 @@ function App({ name, children, app, saludaPapa, }) {
 		<div className="App">
 			<Navbar style={{ backgroundColor: 'blue' }} />
 			<ItemListContainer greeting="Esto es un mensaje para cumplir con la consigna." />
-			<Header />
 
 			<button onClick={saludoYoHijo}>Saludar hijo</button>
 			<button onClick={saludaPapa}>Saludar papa</button>
