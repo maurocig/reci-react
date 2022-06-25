@@ -1,0 +1,9 @@
+h3 {
+	display: inline-block;
+	color: red;
+	padding: 20px;
+}
+
+#addBtn {
+	display: block;
+}
