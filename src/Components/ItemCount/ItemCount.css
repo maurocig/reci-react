@@ -4,6 +4,21 @@ h3 {
 	padding: 20px;
 }
 
-#addBtn {
-	display: block;
+.itemCountWrapper {
+	margin: auto;
+	margin-top: 1rem;
+	border: solid 3px hsl(220, 55%, 16%);
+	border-radius: 4px;
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	width: 80%;
+}
+
+#addBtn {}
+
+.itemCountWrapper button {
+	width: 10rem;
+	height: 3rem;
+	margin: 1rem;
 }

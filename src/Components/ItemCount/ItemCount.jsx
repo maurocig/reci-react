@@ -15,17 +15,19 @@ const ItemCount = ({ myNum }) => {
 	function addToCart() {
 		if (count > 0) {
 			console.log(`se agregaron ${count} items al carrito.`);
+		} else {
+			console.log(`El carrito está vacío.`);
 		}
 	}
 
 	return (
-		<>
+		<div className='itemCountWrapper'>
 			<h2>Item Count</h2>
 			<button onClick={substractOne}>-</button>
 			<h3>{count}</h3>
 			<button onClick={addOne}>+</button>
 			<button id='addBtn' onClick={addToCart}>Agregar al carrito</button>
-		</>
+		</div>
 	)
 }
 
