@@ -1,6 +1,10 @@
+h2 {
+	color: white;
+}
+
 h3 {
 	display: inline-block;
-	color: red;
+	color: white;
 	padding: 20px;
 }
 
@@ -15,10 +19,12 @@ h3 {
 	width: 80%;
 }
 
-#addBtn {}
-
 .itemCountWrapper button {
-	width: 10rem;
-	height: 3rem;
 	margin: 1rem;
+	height: 2rem;
+}
+
+#addBtn {
+	width: 10rem;
+	/* height: 3rem; */
 }

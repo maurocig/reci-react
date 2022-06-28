@@ -1,6 +1,6 @@
 // import logo from './logo.svg';
 import './App.css';
-import Navbar from './Components/Navbar/Navbar.jsx';
+import Navbar from './Components/Navbar/Navbar';
 // import { useState } from 'react';
 import ItemListContainer from './Components/ItemListContainer';
 import ItemCount from './Components/ItemCount/ItemCount';
@@ -14,7 +14,7 @@ function App({ name, children, app, saludaPapa, }) {
 		<div className="App">
 			<Navbar style={{ backgroundColor: 'blue' }} />
 			<ItemListContainer greeting="Esto es un mensaje para cumplir con la consigna." />
-			<ItemCount></ItemCount>
+			<ItemCount stock={3} initial={0} />
 
 			{children}
 

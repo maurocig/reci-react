@@ -1,22 +1,28 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
 
-const ItemCount = ({ myNum }) => {
-	const [count, setCount] = useState(0);
+const ItemCount = ({ stock, initial }) => {
+	const [count, setCount] = useState(initial);
 
 	function addOne() {
-		setCount(count + 1);
+		if (count < stock) {
+			setCount(count + 1);
+		} else {
+			console.log('No hay stock suficiente del item seleccionado :(')
+		}
 	}
 
 	function substractOne() {
 		count > 0 ? setCount(count - 1) : setCount(count);
 	}
 
-	function addToCart() {
-		if (count > 0) {
+	function onAdd() {
+		if (count > 0 && count <= stock) {
 			console.log(`se agregaron ${count} items al carrito.`);
-		} else {
+		} else if (count === 0) {
 			console.log(`El carrito está vacío.`);
+		} else if (count > stock) {
+			console.log('No hay stock suficiente del item seleccionado :(')
 		}
 	}
 
@@ -26,7 +32,7 @@ const ItemCount = ({ myNum }) => {
 			<button onClick={substractOne}>-</button>
 			<h3>{count}</h3>
 			<button onClick={addOne}>+</button>
-			<button id='addBtn' onClick={addToCart}>Agregar al carrito</button>
+			<button id='addBtn' onClick={onAdd}>Agregar al carrito</button>
 		</div>
 	)
 }
