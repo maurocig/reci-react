@@ -1,9 +1,17 @@
-const ItemListContainer = (props) => (
-	<>
-		<p style={{ color: 'blue', backgroundColor: 'gray', padding: '10px', margin: '0' }}>
-			{props.greeting}
-		</p>
-	</>
-);
+import ItemCount from './ItemCount/ItemCount';
+
+const ItemListContainer = (props) => {
+	const onAdd = () => {
+		alert(`gracias por tu compra`);
+	}
+	return (
+		<div style={{ border: 'solid 3px red' }}>
+			<h2>
+				{props.greeting}
+				<ItemCount stock={3} onAdd={onAdd} />
+			</h2>
+		</div>
+	)
+}
 
 export default ItemListContainer;

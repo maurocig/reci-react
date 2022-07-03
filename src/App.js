@@ -14,7 +14,6 @@ function App({ name, children, app, saludaPapa, }) {
 		<div className="App">
 			<Navbar style={{ backgroundColor: 'blue' }} />
 			<ItemListContainer greeting="Esto es un mensaje para cumplir con la consigna." />
-			<ItemCount stock={3} initial={0} />
 
 			{children}
 

@@ -1,30 +1,23 @@
 import React, { useState } from 'react';
 import './ItemCount.css';
 
-const ItemCount = ({ stock, initial }) => {
+const ItemCount = ({ stock, initial = 0, onAdd }) => {
 	const [count, setCount] = useState(initial);
 
 	function addOne() {
-		if (count < stock) {
-			setCount(count + 1);
-		} else {
-			console.log('No hay stock suficiente del item seleccionado :(')
-		}
+		count < stock && setCount(count + 1);
+		count >= stock && alert('No hay stock suficiente del item seleccionado :(');
 	}
 
 	function substractOne() {
-		count > 0 ? setCount(count - 1) : setCount(count);
+		count > 0 && setCount(count - 1);
 	}
 
-	function onAdd() {
-		if (count > 0 && count <= stock) {
-			console.log(`se agregaron ${count} items al carrito.`);
-		} else if (count === 0) {
-			console.log(`El carrito está vacío.`);
-		} else if (count > stock) {
-			console.log('No hay stock suficiente del item seleccionado :(')
-		}
-	}
+	/* function onAdd() { */
+	/* 	count > 0 && count <= stock && console.log(`se agregaron ${count} items al carrito.`); */
+	/* 	count === 0 && console.log(`El carrito está vacío.`); */
+	/* 	count > stock && console.log('No hay stock suficiente del item seleccionado :(') */
+	/* } */
 
 	return (
 		<div className='itemCountWrapper'>
