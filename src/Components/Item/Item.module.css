@@ -1,0 +1,15 @@
+.card {
+	background-color: white;
+}
+
+.itemThumbnail {
+	display: flex;
+	justify-content: center;
+	/* width: 100%; */
+	height: 400px;
+}
+
+.itemThumbnail img {
+	width: 100%;
+	object-fit: contain;
+}
