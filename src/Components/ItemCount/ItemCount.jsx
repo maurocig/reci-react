@@ -6,13 +6,10 @@ const ItemCount = ({ stock, initial = 0, onAdd }) => {
 	const [numero, setNumero] = useState(0);
 
 
-	// useEffect no devuelve nada. Recibe una función (obligatorio) y un array (opcional).
 	useEffect(() => {
-		// todo lo que se ejecute acá se va a ejecutar cuando el componente se monte, y cuando se actualice.
 		console.log('useEffect');
 		setNumero(numero + 1);
 		console.log(`el contador fue modificado ${numero} veces`);
-		// salvo que se especifique una variable en el array de dependencias, en cuyo caso la función se ejecuta solamente cuando se produce un cambio en dicha variable:
 	}, [count]);
 
 	function addOne() {
