@@ -4,16 +4,56 @@ import ItemList from './ItemList/ItemList';
 import { useState } from 'react';
 
 const productosIniciales = [
-	{ name: 'pera', id: 0, price: 100, stock: 5 },
-	{ name: 'manzana', id: 1, price: 50, stock: 3 },
-	{ name: 'banana', id: 2, price: 70, stock: 9 },
-	{ name: 'melon', id: 3, price: 90, stock: 2 },
+
+	{
+		title: 'C-250e MAX',
+		type: 'Equipo',
+		serie: 'C',
+		description: 'Reparto de cargas sensibles a la temperatura en vehículos de pequeño tamaño',
+		id: 0,
+		price: 100,
+		pictureUrl: '',
+		stock: 5
+	},
+
+	{
+		title: 'V-500',
+		type: 'Equipo',
+		serie: 'V',
+		description: 'La serie V-500 le ofrece una performance óptima, consumiendo menos combustible y de forma silenciosa.',
+		id: 0,
+		price: 200,
+		pictureUrl: 'https://www.mincarone.com.br/fotos/1/1/s%C3%A9rie-v-500-max-thermo-king.jpg',
+		stock: 9,
+	},
+
+	{
+		title: 'T-600R',
+		type: 'Equipo',
+		serie: 'T',
+		description: 'Las unidades T-600R permiten control de temperatura preciso, menor consumo de combustible y operación silenciosa',
+		id: 0,
+		price: 300,
+		pictureUrl: 'https://videfrigo.com.br/wp-content/uploads/2021/04/img_produto_T600R_nv-1536x610.jpg',
+		stock: 9,
+	},
+
+	{
+		title: 'T-880R',
+		type: 'Equipo',
+		serie: 'T',
+		description: 'La unidad T-880R utiliza tecnología QuickTemp y un compresor recíproco que le brinda ahorro de combustible, control de temperatura mejorado y mantenimiento reducido.',
+		id: 0,
+		price: 500,
+		pictureUrl: '',
+		stock: 9,
+	},
 ]
 
 const promesa = new Promise((res, rej) => {
 	setTimeout(() => {
 		res(productosIniciales);
-	}, 3000);
+	}, 2000);
 })
 
 const ItemListContainer = (props) => {
@@ -22,7 +62,6 @@ const ItemListContainer = (props) => {
 
 	useEffect(() => {
 		promesa.then((data) => {
-			console.log(data);
 			setProducts(data);
 		})
 			.catch(() => {
@@ -38,9 +77,8 @@ const ItemListContainer = (props) => {
 			<h1>
 				{props.greeting}
 			</h1>
-			<ItemList />
+			<ItemList products={products} />
 			<ItemCount stock={3} onAdd={onAdd} />
-			{products.map((product) => <h2 key={product.id}>{product.name}</h2>)}
 		</div>
 	)
 }
