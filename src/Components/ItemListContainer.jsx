@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import ItemCount from './ItemCount/ItemCount';
 import ItemList from './ItemList/ItemList';
 import { useState } from 'react';
+// import cartel from '../img/cartel.jpg';
 
 const productosIniciales = [
 
@@ -12,7 +13,7 @@ const productosIniciales = [
 		description: 'Reparto de cargas sensibles a la temperatura en vehículos de pequeño tamaño',
 		id: 0,
 		price: 100,
-		pictureUrl: '',
+		pictureUrl: 'https://videfrigo.com.br/wp-content/uploads/2021/04/img_produto_serie-ce_nv-e1620736949377.jpg',
 		stock: 5
 	},
 
@@ -39,13 +40,13 @@ const productosIniciales = [
 	},
 
 	{
-		title: 'T-880R',
+		title: 'T-800R',
 		type: 'Equipo',
 		serie: 'T',
-		description: 'La unidad T-880R utiliza tecnología QuickTemp y un compresor recíproco que le brinda ahorro de combustible, control de temperatura mejorado y mantenimiento reducido.',
+		description: 'La unidad T-800R utiliza tecnología QuickTemp y un compresor recíproco que le brinda ahorro de combustible, control de temperatura mejorado y mantenimiento reducido.',
 		id: 0,
 		price: 500,
-		pictureUrl: '',
+		pictureUrl: 'https://videfrigo.com.br/wp-content/uploads/2021/05/t800.png',
 		stock: 9,
 	},
 ]

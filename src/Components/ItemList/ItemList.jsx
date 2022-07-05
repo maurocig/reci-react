@@ -1,19 +1,22 @@
 import Item from '../Item/Item';
+import styles from './ItemList.module.css';
 
 const ItemList = (props) => {
 	const { products } = props;
 	return (
-		<div className="ItemList">
+		<>
 			<h3>Item List</h3>
 
-			{
-				products.map((item) => {
-					return (
-						<Item item={item} />
-					)
-				})
-			}
-		</div>
+			<div className={styles.gridContainer}>
+				{
+					products.map((item) => {
+						return (
+							<Item item={item} />
+						)
+					})
+				}
+			</div>
+		</>
 	)
 }
 
