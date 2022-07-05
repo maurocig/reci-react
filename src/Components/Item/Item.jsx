@@ -10,6 +10,7 @@ const Item = ({ item, children }) => {
 			</div>
 			<p>{item.description}</p>
 			{children}
+			<button>Ver más</button>
 		</div>
 	)
 }
