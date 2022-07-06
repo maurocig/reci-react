@@ -2,7 +2,7 @@
 import './App.css';
 import Navbar from './Components/Navbar/Navbar';
 import { useState } from 'react';
-import ItemListContainer from './Components/ItemListContainer';
+import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Foto from './Components/Foto/Foto.jsx';
 
 function App({ name, children, app, saludaPapa, }) {
