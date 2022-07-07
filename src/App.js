@@ -4,6 +4,8 @@ import Navbar from './Components/Navbar/Navbar';
 import { useState } from 'react';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Foto from './Components/Foto/Foto.jsx';
+import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
+import ItemDetail from './Components/ItemDetail/ItemDetail'
 
 function App({ name, children, app, saludaPapa, }) {
 
@@ -18,6 +20,10 @@ function App({ name, children, app, saludaPapa, }) {
 			<Navbar style={{ backgroundColor: 'blue' }} />
 			<ItemListContainer greeting="ItemListContainer" />
 			{show ? <Foto /> : <p>aca no hay nada</p>}
+
+			<ItemDetailContainer>
+				<ItemDetail />
+			</ItemDetailContainer>
 
 			{children}
 

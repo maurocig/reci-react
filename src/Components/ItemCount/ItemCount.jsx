@@ -3,13 +3,13 @@ import styles from "./ItemCount.module.css";
 
 const ItemCount = ({ stock, initial = 0, onAdd }) => {
 	const [count, setCount] = useState(0);
-	const [numero, setNumero] = useState(0);
+	// const [numero, setNumero] = useState(0);
 
 
 	useEffect(() => {
 		console.log('useEffect');
-		setNumero(numero + 1);
-		console.log(`el contador fue modificado ${numero} veces`);
+		/* setNumero(numero + 1); */
+		/* console.log(`el contador fue modificado ${numero} veces`); */
 	}, [count]);
 
 	function addOne() {

@@ -38,8 +38,7 @@ const ItemListContainer = (props) => {
 			}
 		}
 
-		getProducts()
-
+		getProducts();
 
 		// para que el código se ejecute solamente cuando el componente se monta, se deja el array de dependencia vacío.
 	}, [])
