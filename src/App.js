@@ -7,6 +7,14 @@ import Foto from './Components/Foto/Foto.jsx';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import ItemDetail from './Components/ItemDetail/ItemDetail'
 
+import ReactDOM from 'react-dom/client';
+import {
+	BrowserRouter,
+	Routes,
+	Route,
+} from "react-router-dom";
+
+
 function App({ name, children, app, saludaPapa, }) {
 
 	const [show, setShow] = useState(true);
@@ -21,9 +29,7 @@ function App({ name, children, app, saludaPapa, }) {
 			<ItemListContainer greeting="ItemListContainer" />
 			{show ? <Foto /> : <p>aca no hay nada</p>}
 
-			<ItemDetailContainer>
-				<ItemDetail />
-			</ItemDetailContainer>
+			<ItemDetailContainer />
 
 			{children}
 
