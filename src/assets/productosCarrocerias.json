@@ -1,0 +1,26 @@
+[
+	{
+		"title": "Aluminio",
+		"type": "carroceria",
+		"brand": "liderkit",
+		"material": "sandwich",
+		"model": "640",
+		"description": "Las carrocerías de alumino son una alternativa ligera y robusta para carga seca.",
+		"id": 21,
+		"price": 5000,
+		"pictureUrl": "https://res.cloudinary.com/lp01/image/upload/v1657581276/reci-react/liderkit/productos-web-lk/aluminio-paneles02_kv4qpy.png",
+		"stock": 4
+	},
+	{
+		"title": "Sandwich 18 mm",
+		"material": "sandwich",
+		"type": "carroceria",
+		"brand": "liderkit",
+		"model": "647",
+		"description": "Las carrocerías de alumino son una alternativa ligera y robusta para carga seca.",
+		"id": 22,
+		"price": 7000,
+		"pictureUrl": "https://res.cloudinary.com/lp01/image/upload/v1657581580/reci-react/liderkit/productos-web-lk/sandwich-paneles01_d0tgto.png",
+		"stock": 2
+	},
+]
