@@ -5,7 +5,7 @@ import { useState } from 'react';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Foto from './Components/Foto/Foto.jsx';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
-import ItemDetail from './Components/ItemDetail/ItemDetail'
+import Cart from './Components/Cart/Cart';
 
 import ReactDOM from 'react-dom/client';
 import {
@@ -24,17 +24,22 @@ function App({ name, children, app, saludaPapa, }) {
 		console.log(show)
 	}
 	return (
-		<div className="App">
+		<BrowserRouter>
 			<Navbar style={{ backgroundColor: 'blue' }} />
-			<ItemListContainer greeting="ItemListContainer" />
-			{show ? <Foto /> : <p>aca no hay nada</p>}
+			<Routes>
+				<Route path="/" element={<ItemListContainer greeting="Bienvenido!" />} />
+				<Route path="/productos/:categoryName" element={<ItemListContainer greeting='categoria' />} />
+				<Route path="/items/:itemId" element={<ItemDetailContainer />} />
+				<Route path="/cart" element={<Cart />} />
+			</Routes>
 
-			<ItemDetailContainer />
+			{/* {show ? <Foto /> : <p>aca no hay nada</p>} */}
+			{/* <ItemDetailContainer /> */}
 
 			{children}
 
 			<button onClick={cambio}>click </button>
-		</div>
+		</BrowserRouter>
 	);
 }
 

@@ -3,7 +3,8 @@
 }
 
 body {
-	background-color: hsl(220, 55%, 16%);
+	--main-bg-color: hsl(220, 55%, 16%);
+	background-color: var(--main-bg-color);
 }
 
 .App-logo {

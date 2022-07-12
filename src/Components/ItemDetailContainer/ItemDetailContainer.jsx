@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import ItemDetail from '../ItemDetail/ItemDetail';
 import ProductosIniciales from '../../assets/productosIniciales.json'
+import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = ({ props }) => {
 	const [product, setProduct] = useState([]);
+	const { itemId } = useParams();
 
 	useEffect(() => {
 
@@ -11,14 +13,14 @@ const ItemDetailContainer = ({ props }) => {
 
 			try {
 
-				// FAKE STORE API
-				const response = await fetch('https://fakestoreapi.com/products');
-				const data = await response.json();
+				/* // FAKE STORE API */
+				/* const response = await fetch('https://fakestoreapi.com/products'); */
+				/* const data = await response.json(); */
+				/* setProduct(data[0]); */
 
-				setProduct(data[0]);
 
-
-				// setProduct(ProductosIniciales[0]);
+				setProduct(ProductosIniciales[itemId]);
+				// console.log(itemId)
 
 			}
 			catch (err) {

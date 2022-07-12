@@ -1,4 +1,5 @@
 import styles from './Item.module.css';
+import { Link } from 'react-router-dom';
 
 const Item = ({ item, children }) => {
 
@@ -12,7 +13,9 @@ const Item = ({ item, children }) => {
 
 			<p>{item.description}</p>
 
-			<button>Ver más</button>
+			<Link to={`/items/${item.id}`}>
+				<button>Ver más</button>
+			</Link>
 		</div>
 	)
 }
