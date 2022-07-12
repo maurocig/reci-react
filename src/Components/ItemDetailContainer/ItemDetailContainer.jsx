@@ -18,8 +18,11 @@ const ItemDetailContainer = ({ props }) => {
 				/* const data = await response.json(); */
 				/* setProduct(data[0]); */
 
+				const productoDetalle = ProductosIniciales.find((producto) => producto.id == itemId);
 
-				setProduct(ProductosIniciales[itemId]);
+				// console.log(productoDetalle)
+				setProduct(productoDetalle);
+
 				// console.log(itemId)
 
 			}
