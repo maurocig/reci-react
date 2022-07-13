@@ -17,8 +17,6 @@ const ItemListContainer = (props) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		console.log(categoryName);
-
 		const getProducts = async () => {
 			// ponemos await antes de hacer una promesa.
 
@@ -30,7 +28,6 @@ const ItemListContainer = (props) => {
 
 				// Local
 				const data = await productosIniciales;
-
 				setProducts(data);
 			}
 			catch (err) {
