@@ -1,5 +1,4 @@
 import styles from './ItemListContainer.module.css';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import productosIniciales from '../../assets/productosIniciales.json';
 
