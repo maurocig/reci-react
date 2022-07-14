@@ -31,7 +31,7 @@ const ItemDetail = (props) => {
 					? <ItemCount stock={3} onAdd={onAdd} />
 					:
 					<>
-						<h2>{count} items.</h2>
+						<h2>Agregaste {count} items.</h2>
 						<Link to='/cart'> <button>Finalizar Compra</button></Link>
 					</>
 			}
