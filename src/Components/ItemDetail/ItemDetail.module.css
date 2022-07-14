@@ -1,0 +1,13 @@
+.detailContainer {
+	color: white;
+	margin: 30px 10%;
+}
+
+.pictureContainer {
+	width: 100%;
+}
+
+.pictureContainer img {
+	object-fit: cover;
+	width: 100%;
+}
