@@ -9,8 +9,9 @@ const ItemDetail = (props) => {
 	const [count, setCount] = useState();
 
 
-	const onAdd = (evento) => {
+	const onAdd = (items) => {
 		setShow(false);
+		setCount(items);
 	}
 
 	return (
@@ -28,7 +29,11 @@ const ItemDetail = (props) => {
 			{
 				show
 					? <ItemCount stock={3} onAdd={onAdd} />
-					: <Link to='/cart'> <button>Finalizar Compra</button></Link>
+					:
+					<>
+						<h2>{count} items.</h2>
+						<Link to='/cart'> <button>Finalizar Compra</button></Link>
+					</>
 			}
 		</div>
 	)
