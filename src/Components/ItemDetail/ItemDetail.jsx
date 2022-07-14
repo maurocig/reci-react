@@ -1,7 +1,17 @@
-// import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import ItemCount from "../ItemCount/ItemCount";
+import { Link } from 'react-router-dom';
 
 const ItemDetail = (props) => {
 	const { product } = props;
+	const [show, setShow] = useState(true);
+
+
+	const onAdd = (event) => {
+		console.log('onAdd');
+		setShow(false);
+
+	}
 
 	return (
 		<div>
@@ -13,6 +23,9 @@ const ItemDetail = (props) => {
 			<img src={product.image} alt="" />
 
 			<p>{product.description}</p>
+			{show
+				? <ItemCount stock={3} onAdd={onAdd} />
+				: <Link to='/cart'><button>Finalizar Compra</button></Link>}
 		</div>
 	)
 }

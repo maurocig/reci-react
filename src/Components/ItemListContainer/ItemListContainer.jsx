@@ -55,7 +55,6 @@ const ItemListContainer = (props) => {
 					error ? <strong style={{ color: 'red' }}>Error</strong> :
 						<ItemList products={products} />
 			}
-			<ItemCount stock={3} onAdd={onAdd} />
 		</div>
 	)
 }

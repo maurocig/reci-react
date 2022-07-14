@@ -15,7 +15,7 @@ import {
 } from "react-router-dom";
 
 
-function App({ name, children, app, saludaPapa, }) {
+function App({ name, children, app }) {
 
 	const [show, setShow] = useState(true);
 
