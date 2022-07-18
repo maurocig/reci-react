@@ -20,7 +20,6 @@ const ItemDetailContainer = ({ props }) => {
 
 				const productoDetalle = await ProductosIniciales.find((producto) => {
 					return producto.id === parseInt(itemId);
-
 				})
 				setProduct(productoDetalle);
 			}

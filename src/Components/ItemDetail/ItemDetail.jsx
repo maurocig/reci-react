@@ -1,17 +1,28 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
-import style from './ItemDetail.module.css'
+import style from './ItemDetail.module.css';
+import { contexto } from '../CartContext/CartContext';
 
 const ItemDetail = (props) => {
 	const { product } = props;
 	const [show, setShow] = useState(true);
 	const [count, setCount] = useState();
+	const { addProduct, products, isInList } = useContext(contexto);
 
+	const onAdd = (count) => {
 
-	const onAdd = (items) => {
-		setShow(false);
-		setCount(items);
+		if (isInList(product)) {
+			alert('producto duplicado')
+		} else {
+			setShow(false);
+			setCount(count);
+			addProduct(product, count);
+		}
+
+		// isInList(product.id) ? alert('ese item ya está en el carrito')
+		// 	: addProduct(product, count);
+
 	}
 
 	return (

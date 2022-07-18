@@ -27,8 +27,18 @@ const ItemListContainer = (props) => {
 
 				// Local
 				const data = await productosIniciales;
-				setProducts(data);
+
+				if (categoryName) {
+					const filtrados = await data.filter((product) => {
+						return `${product.type}` === categoryName;
+					})
+					setProducts(filtrados)
+				} else {
+					setProducts(data);
+				}
 			}
+
+
 			catch (err) {
 				console.log(err);
 				setError(true);
@@ -46,6 +56,8 @@ const ItemListContainer = (props) => {
 	const onAdd = () => {
 		alert(`gracias por tu compra`);
 	}
+
+
 	return (
 		<div className={styles.container}>
 			<h1> {props.greeting} </h1>

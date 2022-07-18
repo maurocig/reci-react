@@ -1,7 +1,11 @@
+import React, { useContext } from 'react';
 import styles from './Item.module.css';
 import { Link } from 'react-router-dom';
+// import { contexto } from '../Context/Context';
 
 const Item = ({ item, children }) => {
+
+	// const resultado = useContext(contexto); // esto recibe lo que mandé por props en Context.jsx.
 
 	return (
 		<div className={styles.card}>
