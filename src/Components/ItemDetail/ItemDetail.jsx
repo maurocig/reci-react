@@ -12,18 +12,13 @@ const ItemDetail = (props) => {
 
 	const onAdd = (count) => {
 
-		if (isInList(product)) {
-			alert('producto duplicado')
-		} else {
-			setShow(false);
-			setCount(count);
-			addProduct(product, count);
-		}
+		setCount(count);
+		addProduct(product, count);
 
 		// isInList(product.id) ? alert('ese item ya está en el carrito')
 		// 	: addProduct(product, count);
-
 	}
+
 
 	return (
 		<div className={style.detailContainer}>

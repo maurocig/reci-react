@@ -11,8 +11,16 @@ const CustomProvider = ({ children }) => {
 	}, [products])
 
 	const addProduct = (item, count) => {
-		const newProduct = { ...item, qty: count };
-		setProducts([...products, newProduct]);
+		if (isInList(item)) {
+			const aux = [...products];
+			const found = aux.find((p) => p.id === item.id);
+			found.qty += count;
+			setProducts(aux);
+
+		} else {
+			const newProduct = { ...item, qty: count };
+			setProducts([...products, newProduct]);
+		}
 	}
 
 
@@ -28,7 +36,6 @@ const CustomProvider = ({ children }) => {
 
 		if (products.length !== 0) {
 			const foundItem = products.find((item) => item.id === product.id);
-			console.log(foundItem)
 			return foundItem;
 		} else {
 			return false;
