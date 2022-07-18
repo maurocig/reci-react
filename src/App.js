@@ -12,7 +12,8 @@ import {
 	Routes,
 	Route,
 } from "react-router-dom";
-import CustomProvider from './Components/CartContext/CartContext';
+
+import CustomProvider from '../src/Context/CartContext'
 
 
 function App({ name, children, app }) {

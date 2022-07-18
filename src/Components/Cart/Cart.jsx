@@ -1,6 +1,6 @@
-import { contexto } from '../CartContext/CartContext';
 import { useContext } from 'react';
 import style from './Cart.module.css'
+import { contexto } from '../../Context/CartContext';
 
 
 export default function Cart() {
@@ -13,8 +13,8 @@ export default function Cart() {
 			<ul>
 
 				{
-					products.map((item) => (
-						<li>
+					products.map((item, index) => (
+						<li key={index}>
 							<strong>{item.qty}</strong> {item.type} {item.title}
 						</li>
 					))

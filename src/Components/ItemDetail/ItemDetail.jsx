@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react';
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
 import style from './ItemDetail.module.css';
-import { contexto } from '../CartContext/CartContext';
+import { contexto } from '../../Context/CartContext';
 
 const ItemDetail = (props) => {
 	const { product } = props;

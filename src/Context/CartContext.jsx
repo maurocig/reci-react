@@ -12,10 +12,7 @@ const CustomProvider = ({ children }) => {
 
 	const addProduct = (item, count) => {
 		const newProduct = { ...item, qty: count };
-
-		console.log(newProduct)
 		setProducts([...products, newProduct]);
-
 	}
 
 
@@ -28,7 +25,6 @@ const CustomProvider = ({ children }) => {
 	}
 
 	function isInList(product) {
-		console.log(products);
 
 		if (products.length !== 0) {
 			const foundItem = products.find((item) => item.id === product.id);
@@ -40,12 +36,8 @@ const CustomProvider = ({ children }) => {
 
 	}
 
-	const obtenerCantidad = () => {
-		console.log('esta funcion obtiene la cantidad de productos.');
-	}
-
 	return (
-		<Provider value={{ products, addProduct, removeProduct, resetList, obtenerCantidad, isInList }}> {/* llaves para indicar que es un objeto. */}
+		<Provider value={{ products, addProduct, removeProduct, resetList, isInList }}> {/* llaves para indicar que es un objeto. */}
 			{children}
 		</Provider>
 	)
