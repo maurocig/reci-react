@@ -9,16 +9,17 @@ export default function Cart() {
 	console.log(products);
 	return (
 		<div className={style.container}>
-			<h1>Soy el carrito</h1>
+			<h2>Soy el carrito</h2>
 			<ul>
 
-				{
+				products ? {
 					products.map((item, index) => (
 						<li key={index}>
 							<strong>{item.qty}</strong> {item.type} {item.title}
 						</li>
 					))
 				}
+				: <h3>No hay productos para mostrar</h3>
 
 			</ul>
 		</div>
