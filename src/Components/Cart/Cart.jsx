@@ -12,14 +12,15 @@ export default function Cart() {
 			<h2>Soy el carrito</h2>
 			<ul>
 
-				products ? {
-					products.map((item, index) => (
-						<li key={index}>
-							<strong>{item.qty}</strong> {item.type} {item.title}
-						</li>
-					))
+				{
+					products.length > 0
+						? (products.map((item, index) => (
+							<li key={index}>
+								<strong>{item.qty}</strong> {item.type} {item.title}
+							</li>
+						)))
+						: <h3>No hay productos para mostrar</h3>
 				}
-				: <h3>No hay productos para mostrar</h3>
 
 			</ul>
 		</div>

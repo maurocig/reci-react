@@ -34,7 +34,7 @@ const ItemDetail = (props) => {
 			<p>{product.description}</p>
 			{
 				show
-					? <ItemCount stock={3} onAdd={onAdd} />
+					? <ItemCount stock={product.stock} onAdd={onAdd} />
 					:
 					<>
 						<h2>Agregaste {count} items.</h2>
