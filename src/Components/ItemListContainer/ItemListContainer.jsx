@@ -1,10 +1,12 @@
 import styles from './ItemListContainer.module.css';
 import ItemList from '../ItemList/ItemList';
 import productosIniciales from '../../assets/productosIniciales.json';
+import Loader from '../Loader/Loader';
 
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { HolidayVillage } from '@mui/icons-material';
 // import cartel from '../img/cartel.jpg';
 
 const ItemListContainer = (props) => {
@@ -30,7 +32,7 @@ const ItemListContainer = (props) => {
 
 				if (categoryName) {
 					const filtrados = await data.filter((product) => {
-						return `${product.type}` === categoryName;
+						return `${product.type}s` === categoryName;
 					})
 					setProducts(filtrados)
 				} else {
@@ -61,11 +63,12 @@ const ItemListContainer = (props) => {
 	return (
 		<div className={styles.container}>
 			<h1> {props.greeting} </h1>
-			{
-				loading ? <p style={{ color: 'white' }}>Loading...</p> :
-					error ? <strong style={{ color: 'red' }}>Error</strong> :
-						<ItemList products={products} />
-			}
+			{/* { */}
+			{/* loading ? <p style={{ color: 'white' }}>Loading...</p> : */}
+			{/* error ? <strong style={{ color: 'red' }}>Error</strong> : */}
+			{/* <Loader loading={loading} /> */}
+			<ItemList products={products} loading={loading} />
+			{/* } */}
 		</div>
 	)
 }

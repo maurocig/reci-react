@@ -1,3 +1,57 @@
 .container {
+	color: black;
+	margin: 0 10% 0 10%;
+
+}
+
+.container h2 {
 	color: white;
+}
+
+.ulContainer {
+	list-style-type: none;
+	border: solid 2px darkgray;
+	padding: 0;
+	background-color: var(--bright-bg-color);
+	border-radius: 8px;
+}
+
+.ulContainer h3 {
+	color: black;
+}
+
+.ulContainer li {
+	padding: 2rem;
+	border-bottom: solid 1px darkgray;
+	display: flex;
+	align-items: center;
+	height: 80px;
+	/* width: 100%; */
+}
+
+.imgContainer {
+	border: solid 2px darkgray;
+	border-radius: 6px;
+	width: 90px;
+	height: 100%;
+	margin-right: 3rem;
+	display: flex;
+	place-items: center;
+}
+
+.imgContainer img {
+	object-fit: contain;
+	width: 100%;
+}
+
+.itemText {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	/* border: solid red; */
+}
+
+.itemText span {
+	padding: 3rem;
+	/* border: solid blue; */
 }

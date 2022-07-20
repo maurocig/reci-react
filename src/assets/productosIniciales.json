@@ -1,7 +1,7 @@
 [
 	{
 		"title": "C-250e MAX",
-		"type": "equipos",
+		"type": "equipo",
 		"serie": "C",
 		"description": "Reparto de cargas sensibles a la temperatura en vehículos de pequeño tamaño",
 		"id": 0,
@@ -11,7 +11,7 @@
 	},
 	{
 		"title": "V-500",
-		"type": "equipos",
+		"type": "equipo",
 		"serie": "V",
 		"description": "La serie V-500 le ofrece una performance óptima, consumiendo menos combustible y de forma silenciosa.",
 		"id": 1,
@@ -21,7 +21,7 @@
 	},
 	{
 		"title": "T-600R",
-		"type": "equipos",
+		"type": "equipo",
 		"serie": "T",
 		"description": "Las unidades T-600R permiten control de temperatura preciso, menor consumo de combustible y operación silenciosa",
 		"id": 2,
@@ -31,7 +31,7 @@
 	},
 	{
 		"title": "T-800R",
-		"type": "equipos",
+		"type": "equipo",
 		"serie": "T",
 		"description": "La unidad T-800R utiliza tecnología QuickTemp y un compresor recíproco que le brinda ahorro de combustible, control de temperatura mejorado y mantenimiento reducido.",
 		"id": 3,
@@ -41,7 +41,7 @@
 	},
 	{
 		"title": "Aluminio",
-		"type": "carrocerias",
+		"type": "carroceria",
 		"brand": "liderkit",
 		"material": "sandwich",
 		"model": "640",
@@ -54,7 +54,7 @@
 	{
 		"title": "Sandwich 18 mm",
 		"material": "sandwich",
-		"type": "carrocerias",
+		"type": "carroceria",
 		"brand": "liderkit",
 		"model": "647",
 		"description": "Las carrocerías de alumino son una alternativa ligera y robusta para carga seca.",
