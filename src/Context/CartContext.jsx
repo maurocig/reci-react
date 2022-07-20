@@ -23,7 +23,6 @@ const CustomProvider = ({ children }) => {
 		}
 	}
 
-
 	const removeProduct = (product) => {
 		console.log(`esta funcion quita el producto ${product.title}`);
 		let aux = [...products];
@@ -46,8 +45,17 @@ const CustomProvider = ({ children }) => {
 
 	}
 
+	function calcularTotal() {
+		let total = 0;
+		products.map((p) => {
+			total += (p.price * p.qty);
+		})
+		console.log(total);
+		return total;
+	}
+
 	return (
-		<Provider value={{ products, addProduct, removeProduct, resetList, isInList }}> {/* llaves para indicar que es un objeto. */}
+		<Provider value={{ products, addProduct, removeProduct, resetList, isInList, calcularTotal }}> {/* llaves para indicar que es un objeto. */}
 			{children}
 		</Provider>
 	)

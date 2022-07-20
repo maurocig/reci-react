@@ -4,7 +4,7 @@ import { contexto } from '../../Context/CartContext';
 
 
 export default function Cart() {
-	const { products, removeProduct } = useContext(contexto);
+	const { products, removeProduct, calcularTotal } = useContext(contexto);
 
 	console.log(products);
 	return (
@@ -27,6 +27,9 @@ export default function Cart() {
 						)))
 						: <h3>No hay productos para mostrar</h3>
 				}
+				<div className={style.ulResumen}>
+					Total: <strong>{calcularTotal()}</strong>
+				</div>
 			</ul>
 		</div>
 	)

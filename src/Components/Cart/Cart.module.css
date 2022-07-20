@@ -67,3 +67,10 @@
 .itemQty strong {
 	margin-right: 1rem;
 }
+
+.ulResumen {
+	color: black;
+	text-align: end;
+	padding: 2rem;
+	font-size: 1.3rem;
+}
