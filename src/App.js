@@ -1,5 +1,5 @@
 // import logo from './logo.svg';
-import './App.css';
+import style from './App.module.css'
 import Navbar from './Components/Navbar/Navbar';
 import { useState } from 'react';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
@@ -17,7 +17,7 @@ function App({ name, children, app }) {
 	const [show, setShow] = useState(true);
 
 	return (
-		<BrowserRouter>
+		<BrowserRouter style={style}>
 			<CustomProvider>
 				<Navbar style={{ backgroundColor: 'blue' }} />
 				<Routes>
