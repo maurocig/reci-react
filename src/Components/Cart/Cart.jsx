@@ -4,7 +4,7 @@ import { contexto } from '../../Context/CartContext';
 
 
 export default function Cart() {
-	const { products } = useContext(contexto);
+	const { products, removeProduct } = useContext(contexto);
 
 	console.log(products);
 	return (
@@ -19,9 +19,10 @@ export default function Cart() {
 									<img src={item.pictureUrl} alt="" />
 								</div>
 								<div className={style.itemText}>
-									<span>{item.type.toUpperCase()} {item.title} </span>
-									<span><strong>{item.qty}</strong></span>
+									<span className={style.itemTitle}>{item.type.toUpperCase()} {item.title.toUpperCase()} </span>
+									<span className={style.itemQty}><strong>{item.qty}</strong> {item.qty > 1 ? 'unidades' : 'unidad'} </span>
 								</div>
+								<button onClick={() => removeProduct(item)}>Borrar</button>
 							</li>
 						)))
 						: <h3>No hay productos para mostrar</h3>

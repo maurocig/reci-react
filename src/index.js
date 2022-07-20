@@ -5,14 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Message from './Components/Message'
 
-const saludar = () => console.log('holaa saludo papa');
 
 // Componente contenedor
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 	<React.StrictMode>
-		<App name='reci' app='Mi Aplicación con React' saludaPapa={saludar}>
-			<Message />
+		<App name='reci' app='Mi Aplicación con React'>
+			{/* <Message /> */}
 		</App>
 	</React.StrictMode>
 );

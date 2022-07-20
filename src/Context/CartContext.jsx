@@ -13,7 +13,7 @@ const CustomProvider = ({ children }) => {
 	const addProduct = (item, count) => {
 		if (isInList(item)) {
 			const aux = [...products];
-			const found = aux.find((p)=> p.id === item.id);
+			const found = aux.find((p) => p.id === item.id);
 			found.qty += count;
 			setProducts(aux);
 
@@ -25,7 +25,10 @@ const CustomProvider = ({ children }) => {
 
 
 	const removeProduct = (product) => {
-		console.log('esta funcion quita un producto');
+		console.log(`esta funcion quita el producto ${product.title}`);
+		let aux = [...products];
+		aux = aux.filter((el) => el.id !== product.id)
+		setProducts(aux);
 	}
 
 	const resetList = () => {
