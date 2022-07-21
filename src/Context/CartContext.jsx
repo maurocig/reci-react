@@ -5,9 +5,11 @@ const { Provider } = contexto;	// Provider es una palabra reservada.
 
 const CustomProvider = ({ children }) => {
 	const [products, setProducts] = useState([]);
+	const [cantidadItems, setCantidadItems] = useState([]);
 
 	useEffect(() => {
 		console.log(products)
+		itemCount();
 	}, [products])
 
 	const addProduct = (item, count) => {
@@ -45,6 +47,13 @@ const CustomProvider = ({ children }) => {
 
 	}
 
+	function itemCount() {
+		let totalItems = 0;
+		products.map((p) => totalItems += p.qty);
+		setCantidadItems(totalItems);
+		console.log(totalItems);
+	}
+
 	function calcularTotal() {
 		let total = 0;
 		products.map((p) => {
@@ -55,7 +64,7 @@ const CustomProvider = ({ children }) => {
 	}
 
 	return (
-		<Provider value={{ products, addProduct, removeProduct, resetList, isInList, calcularTotal }}> {/* llaves para indicar que es un objeto. */}
+		<Provider value={{ products, addProduct, removeProduct, resetList, isInList, calcularTotal, cantidadItems }}> {/* llaves para indicar que es un objeto. */}
 			{children}
 		</Provider>
 	)

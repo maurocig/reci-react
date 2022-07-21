@@ -26,7 +26,7 @@ const Navbar = () => {
 				}
 				<NavLink to="/contacto">Nosotros</NavLink>
 			</div>
-			<NavLink to="/cart">
+			<NavLink style={{ 'textDecoration': 'none' }} to="/cart">
 				<CartWidget />
 			</NavLink>
 			{/* <a href="#!" id="carrito"><img src={ShoppingCartIcon} alt="" /></a> */}

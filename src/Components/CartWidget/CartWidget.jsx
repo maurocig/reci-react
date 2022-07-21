@@ -1,11 +1,16 @@
-import React from "react";
+import { React, useContext } from "react";
 import { FaShoppingCart } from 'react-icons/fa';
-import './CartWidget.css';
+import style from './CartWidget.module.css'
+import { contexto } from '../../Context/CartContext';
+
 
 export const CartWidget = () => {
+	const { products, cantidadItems } = useContext(contexto);
+
 	return (
-		<button id="CartButton">
-			<FaShoppingCart id="FaShoppingCart" />
-		</button>
+		<>
+			<div className={style.cartCount}>{cantidadItems}</div>
+			<FaShoppingCart className={style.FaShoppingCart} />
+		</>
 	)
 }
