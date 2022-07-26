@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import CustomProvider from '../src/Context/CartContext'
 
+
 function App({ name, children, app }) {
 
 	const [show, setShow] = useState(true);
@@ -32,5 +33,3 @@ function App({ name, children, app }) {
 }
 
 export default App;
-
-
