@@ -70,9 +70,17 @@
 
 .ulResumen {
 	color: black;
+	/* display: flex; */
+	/* flex-direction: column; */
 	text-align: end;
 	padding: 2rem;
 	font-size: 1.3rem;
+}
+
+.ulResumen button {
+	display: block;
+	margin-top: 20px;
+	margin-left: auto;
 }
 
 h3 {

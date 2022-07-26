@@ -9,7 +9,11 @@ export const CartWidget = () => {
 
 	return (
 		<>
-			<div className={style.cartCount}>{cantidadItems}</div>
+			{
+				cantidadItems > 0
+					? <div className={style.cartCount}>{cantidadItems}</div>
+					: ''
+			}
 			<FaShoppingCart className={style.FaShoppingCart} />
 		</>
 	)

@@ -1,13 +1,12 @@
 import styles from './ItemListContainer.module.css';
 import ItemList from '../ItemList/ItemList';
 import productosIniciales from '../../assets/productosIniciales.json';
-import Loader from '../Loader/Loader';
 
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { HolidayVillage } from '@mui/icons-material';
-// import cartel from '../img/cartel.jpg';
+import { db } from '../../firebase/firebase';
+
+import { getDocs, collection, query, where } from 'firebase/firestore';
 
 const ItemListContainer = (props) => {
 
@@ -18,57 +17,45 @@ const ItemListContainer = (props) => {
 	const [loading, setLoading] = useState(true);
 
 	useEffect(() => {
-		const getProducts = async () => {
-			// ponemos await antes de hacer una promesa.
 
-			try {
+		const productCollection = collection(db, 'productosIniciales');
+		let q;
+		categoryName
+			? q = query(productCollection, where('type', '==', categoryName))
+			: q = productCollection;
+		getDocs(q)
+			.then(result => {
+				const lista = result.docs.map((doc) => {
+					return {
+						id: doc.id,
+						...doc.data()
+					};
+				})
+				setProducts(lista)
+				setLoading(false)
+			})
 
-				// // FAKE STORE API
-				// const response = await fetch('https://fakestoreapi.com/products');
-				// const data = await response.json();
+		/* const getProducts = async () => { */
+		/* 	try { */
+		/* 		const response = await fetch('https://fakestoreapi.com/products/') */
+		/* 		const data = await response.json() */
+		/* 		setProducts(data) */
+		/* 	} */
+		/* 	catch (err) { */
+		/* 		console.log(err); */
+		/* 		setError(true); */
+		/* 	} */
+		/* 	finally { */
+		/* 		setLoading(false); */
+		/* 	} */
+		/* } */
+		/* getProducts(); */
 
-				// Local
-				const data = await productosIniciales;
-
-				if (categoryName) {
-					const filtrados = await data.filter((product) => {
-						return `${product.type}s` === categoryName;
-					})
-					setProducts(filtrados)
-				} else {
-					setProducts(data);
-				}
-			}
-
-
-			catch (err) {
-				console.log(err);
-				setError(true);
-			}
-			finally {
-				setLoading(false);
-			}
-		}
-
-		getProducts();
-
-		// para que el código se ejecute solamente cuando el componente se monta, se deja el array de dependencia vacío.
 	}, [categoryName])
-
-	const onAdd = () => {
-		alert(`gracias por tu compra`);
-	}
-
 
 	return (
 		<div className={styles.container}>
-			<h1> {props.greeting} </h1>
-			{/* { */}
-			{/* loading ? <p style={{ color: 'white' }}>Loading...</p> : */}
-			{/* error ? <strong style={{ color: 'red' }}>Error</strong> : */}
-			{/* <Loader loading={loading} /> */}
-			<ItemList products={products} loading={loading} />
-			{/* } */}
+			<ItemList products={products} loading={loading} categoria={categoryName} />
 		</div>
 	)
 }

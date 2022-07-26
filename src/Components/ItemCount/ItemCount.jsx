@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from "./ItemCount.module.css";
 
-const ItemCount = ({ stock, initial = 0, onAdd }) => {
-	const [count, setCount] = useState(0);
+const ItemCount = ({ stock, initial = 1, onAdd }) => {
+	const [count, setCount] = useState(initial);
 
 	useEffect(() => {
 		console.log('useEffect');
@@ -14,7 +14,7 @@ const ItemCount = ({ stock, initial = 0, onAdd }) => {
 	}
 
 	function substractOne() {
-		count > 0 && setCount(count - 1);
+		count > 1 && setCount(count - 1);
 	}
 
 	return (

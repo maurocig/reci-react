@@ -3,17 +3,27 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
 import style from './ItemDetail.module.css';
 import { contexto } from '../../Context/CartContext';
+import Loader from '../Loader/Loader';
 
 const ItemDetail = (props) => {
-	const { product } = props;
+	const { product, loading } = props;
 	const [show, setShow] = useState(true);
 	const [count, setCount] = useState();
 	const { addProduct, products, isInList } = useContext(contexto);
 
+	const datosComprador = {
+		nombre: 'diego',
+		apellido: 'gomex',
+		email: 'diegokpo97@hotmail.com'
+	}
+
 	const onAdd = (count) => {
 
 		setCount(count);
-		addProduct(product, count);
+		if (count > 0) {
+			addProduct(product, count);
+			setShow(false);
+		}
 
 		// isInList(product.id) ? alert('ese item ya está en el carrito')
 		// 	: addProduct(product, count);
@@ -23,6 +33,7 @@ const ItemDetail = (props) => {
 	return (
 		<div className={style.detailContainer}>
 			<h1>ITEM DETAIL</h1>
+			<Loader loading={loading} />
 			<h2>{product.title}</h2>
 			<div className={style.pictureContainer}>
 				<img src={product.pictureUrl} alt="" />

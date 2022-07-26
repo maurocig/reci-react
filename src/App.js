@@ -11,7 +11,6 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import CustomProvider from '../src/Context/CartContext'
 
-
 function App({ name, children, app }) {
 
 	const [show, setShow] = useState(true);
@@ -22,7 +21,7 @@ function App({ name, children, app }) {
 				<Navbar style={{ backgroundColor: 'blue' }} />
 				<Routes>
 					<Route path="/" element={<ItemListContainer greeting="Bienvenido!" />} />
-					<Route path="/productos/:categoryName" element={<ItemListContainer greeting='categoria' />} />
+					<Route path="/productos/:categoryName" element={<ItemListContainer />} />
 					<Route path="/items/:itemId" element={<ItemDetailContainer />} />
 					<Route path="/cart" element={<Cart />} />
 				</Routes>
@@ -33,3 +32,5 @@ function App({ name, children, app }) {
 }
 
 export default App;
+
+
