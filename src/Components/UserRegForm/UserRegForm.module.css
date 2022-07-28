@@ -1,0 +1,17 @@
+.formContainer {
+	color: lightgray;	
+	width: 80%; 
+	/* border: solid red; */
+	margin: auto;
+}
+
+input {
+	border-radius: 5px;
+	border: none;
+	padding: 0.4rem 1rem;
+	display: block;
+	height: 40px;
+	width: 300px;
+	margin-bottom: 20px;
+	font-size: large;
+}
