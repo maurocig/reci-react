@@ -1,4 +1,6 @@
 import React, { useEffect, useState, createContext } from 'react';
+import { doc, addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { db } from '../firebase/firebase';
 
 export const contexto = createContext();
 const { Provider } = contexto;	// Provider es una palabra reservada.
@@ -7,6 +9,7 @@ const CustomProvider = ({ children }) => {
 	const [products, setProducts] = useState([]);
 	const [cantidadItems, setCantidadItems] = useState([]);
 	const [total, setTotal] = useState([]);
+	const { idVenta, setIdVenta } = useState();
 
 	useEffect(() => {
 		console.log(products)
@@ -65,8 +68,30 @@ const CustomProvider = ({ children }) => {
 		return total;
 	}
 
+	// const datosComprador = {
+	// 	nombre: 'Juan',
+	// 	apellido: 'Perez',
+	// 	email: 'juan@gmail.com'
+	// }
+
+	const finalizarCompra = (datosComprador) => {
+		const ventasCollection = collection(db, 'ventas');
+		addDoc(ventasCollection, {
+			datosComprador,
+			items: products,
+			date: serverTimestamp(),
+			total: total,
+		})
+			.then((result) => {
+				setIdVenta(result.id);
+			})
+		console.log(idVenta)
+
+	}
+
+
 	return (
-		<Provider value={{ products, addProduct, removeProduct, resetList, isInList, calcularTotal, cantidadItems, total }}> {/* llaves para indicar que es un objeto. */}
+		<Provider value={{ products, addProduct, removeProduct, resetList, isInList, calcularTotal, cantidadItems, total, finalizarCompra, idVenta }}>
 			{children}
 		</Provider>
 	)

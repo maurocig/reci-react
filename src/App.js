@@ -5,6 +5,7 @@ import { useState } from 'react';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './Components/Cart/Cart';
+import UserRegForm from './Components/UserRegForm/UserRegForm';
 
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -25,6 +26,7 @@ function App({ name, children, app }) {
 					<Route path="/productos/:categoryName" element={<ItemListContainer />} />
 					<Route path="/items/:itemId" element={<ItemDetailContainer />} />
 					<Route path="/cart" element={<Cart />} />
+					<Route path="/userForm" element={<UserRegForm />} />
 				</Routes>
 				{children}
 			</ CustomProvider>

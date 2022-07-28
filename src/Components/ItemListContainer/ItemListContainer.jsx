@@ -23,17 +23,17 @@ const ItemListContainer = (props) => {
 		categoryName
 			? q = query(productCollection, where('type', '==', categoryName))
 			: q = productCollection;
-		getDocs(q)
-			.then(result => {
-				const lista = result.docs.map((doc) => {
-					return {
-						id: doc.id,
-						...doc.data()
-					};
-				})
-				setProducts(lista)
-				setLoading(false)
+
+		getDocs(q).then(result => {
+			const lista = result.docs.map((snapshot) => {
+				return {
+					id: snapshot.id,
+					...snapshot.data()
+				};
 			})
+			setProducts(lista)
+			setLoading(false)
+		})
 
 		/* const getProducts = async () => { */
 		/* 	try { */

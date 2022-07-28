@@ -2,34 +2,12 @@ import { useContext, useState } from 'react';
 import style from './Cart.module.css'
 import { contexto } from '../../Context/CartContext';
 import { Link } from 'react-router-dom';
-import { doc, addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import { FaTrashAlt } from 'react-icons/fa';
-import { db } from '../../firebase/firebase'
 
 
 export default function Cart() {
 	const { products, removeProduct, calcularTotal, total } = useContext(contexto);
-	const { idVenta, setIdVenta } = useState();
 
-	const datosComprador = {
-		nombre: 'Juan',
-		apellido: 'Perez',
-		email: 'juan@gmail.com'
-	}
-
-	const finalizarCompra = () => {
-		const ventasCollection = collection(db, 'ventas');
-		addDoc(ventasCollection, {
-			datosComprador,
-			items: products,
-			date: serverTimestamp(),
-			total: total,
-		})
-			.then((result) => {
-				setIdVenta(result.id);
-			})
-		console.log('agregada.')
-	}
 
 	console.log(products);
 	return (
@@ -45,7 +23,12 @@ export default function Cart() {
 										<img src={item.pictureUrl} alt="" />
 									</div>
 									<div className={style.itemText}>
-										<span className={style.itemTitle}>{item.type.toUpperCase()} {item.title.toUpperCase()} {item.brand} </span>
+										<span className={style.itemTitle}>
+											{item.type === 'carrocerias' && 'Carrocería '}
+											{item.type === 'equipos' && 'Equipo '}
+											{item.type === 'accesorios' && 'Accesorio '}
+											{item.title.toUpperCase()} {item.brand}
+										</span>
 										<span className={style.itemQty}><strong>{item.qty}</strong> {item.qty > 1 ? 'unidades' : 'unidad'} </span>
 									</div>
 									<FaTrashAlt className={style.buttonDelete} onClick={() => removeProduct(item)} />
@@ -54,7 +37,9 @@ export default function Cart() {
 							}
 							< div className={style.ulResumen}>
 								Total: <strong>{total}</strong>
-								<button onClick={finalizarCompra}>Finalizar Compra</button>
+								<Link to="/userForm">
+									<button>Finalizar Compra</button>
+								</Link>
 							</div>
 						</ul>
 					)

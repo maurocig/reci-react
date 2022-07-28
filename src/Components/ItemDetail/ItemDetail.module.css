@@ -1,13 +1,20 @@
 .detailContainer {
 	color: white;
 	margin: 30px 10%;
+	width: 80%;
+	/* border: solid red; */
 }
 
 .pictureContainer {
-	width: 100%;
+	max-height: 60vh;
+	height: 500px;
+	/* border: solid red; */
+	display: flex;
+	justify-content: center;
 }
 
 .pictureContainer img {
-	object-fit: cover;
+	object-fit: contain;
+	height: 100%;
 	width: 100%;
 }
