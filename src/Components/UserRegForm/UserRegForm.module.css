@@ -1,8 +1,4 @@
 .formContainer {
-	color: lightgray;	
-	width: 80%; 
-	/* border: solid red; */
-	margin: auto;
 }
 
 input {
@@ -14,4 +10,16 @@ input {
 	width: 300px;
 	margin-bottom: 20px;
 	font-size: large;
+}
+
+.container {
+	color: lightgray;	
+	width: 80%; 
+	/* border: solid red; */
+	margin: auto;
+	font-size: 20px;
+}
+
+.container strong {
+	color: var(--success-color);
 }

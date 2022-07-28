@@ -9,7 +9,7 @@ const CustomProvider = ({ children }) => {
 	const [products, setProducts] = useState([]);
 	const [cantidadItems, setCantidadItems] = useState([]);
 	const [total, setTotal] = useState([]);
-	const { idVenta, setIdVenta } = useState();
+	const [idVenta, setIdVenta] = useState('default');
 
 	useEffect(() => {
 		console.log(products)
@@ -83,10 +83,11 @@ const CustomProvider = ({ children }) => {
 			total: total,
 		})
 			.then((result) => {
+				// setIdVenta(result.id);
 				setIdVenta(result.id);
+				console.log(result.id)
 			})
 		console.log(idVenta)
-
 	}
 
 
