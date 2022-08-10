@@ -48,6 +48,7 @@
 .imgContainer img {
 	object-fit: contain;
 	width: 100%;
+	cursor: pointer;
 }
 
 .itemText {
@@ -100,4 +101,33 @@ h3 {
 
 a {
 	text-decoration: none;
+}
+
+@media (max-width: 700px) {
+	.imgContainer {
+	margin-right: 1rem;
+	}
+	
+	.container {
+		margin-inline: 5%;
+	}
+
+	.ulContainer li {
+		padding: 1rem;
+	}
+
+	/* .itemText { */
+	/* 	display: flex; */
+	/* 	flex-direction: column; */
+	/* } */
+	
+	
+	li * {
+		display: flex;
+		align-items: center;
+	}
+	
+	.imgContainer {
+		height: 60px;
+	}
 }

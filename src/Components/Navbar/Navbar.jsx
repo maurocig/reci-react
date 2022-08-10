@@ -30,6 +30,10 @@ export default function Navbar() {
 		{ name: 'accesorios', id: 2, route: '/productos/accesorios' },
 	]
 
+	function toggleNav() {
+		setIsNavExpanded(!isNavExpanded);
+	}
+
 	return (
 		<nav className={style.nav}>
 			<div className={style.logoContainer}>
@@ -43,12 +47,12 @@ export default function Navbar() {
 							{categories.map((category) => {
 								return (
 									<li>
-										<NavLink className={style.navLink} key={category.id} to={category.route}>{category.name}</NavLink>
+										<NavLink onClick={toggleNav} className={style.navLink} key={category.id} to={category.route}>{category.name}</NavLink>
 									</li>
 								);
 							})}
 							<li>
-								<NavLink className={style.navLink} to="/contacto">Nosotros</NavLink>
+								<NavLink onClick={toggleNav} className={style.navLink} to="/contacto">Nosotros</NavLink>
 							</li>
 						</ul>
 					)
@@ -63,7 +67,7 @@ export default function Navbar() {
 						</NavLink>
 					)
 				}
-				<button className={style.mobileNavToggle} onClick={() => setIsNavExpanded(!isNavExpanded)} aria-controls="primary-navigation" aria-expanded="false">
+				<button className={style.mobileNavToggle} onClick={toggleNav} aria-controls="primary-navigation" aria-expanded="false">
 					{
 						isNavExpanded ? <MdClose className={style.navCloseIcon} />
 							: <FiMenu className={style.navToggleIcon} />

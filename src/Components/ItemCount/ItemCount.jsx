@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import styles from "./ItemCount.module.css";
+import { AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai';
+import style from "./ItemCount.module.css";
 
 const ItemCount = ({ stock, initial = 1, onAdd }) => {
 	const [count, setCount] = useState(initial);
@@ -18,14 +19,14 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
 	}
 
 	return (
-		<div className={styles.itemCountWrapper}>
-			<h2>Item Count</h2>
-			<div className={styles.counter}>
-				<button onClick={substractOne}>-</button>
+		<div className={style.itemCountWrapper}>
+			{/* <h2>Item Count</h2> */}
+			<div className={style.counter}>
+				<AiFillMinusCircle className={style.btnCount} onClick={substractOne} />
 				<h3>{count}</h3>
-				<button onClick={addOne}>+</button>
-				<button id='addBtn' onClick={() => onAdd(count)}>Agregar al carrito</button>
+				<AiFillPlusCircle className={style.btnCount} onClick={addOne} />
 			</div>
+			<button className={style.btnAdd} onClick={() => onAdd(count)}>Agregar al carrito</button>
 		</div>
 	)
 }
