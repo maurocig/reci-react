@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useContext } from 'react';
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from 'react-router-dom';
 import style from './ItemDetail.module.css';
@@ -9,16 +9,9 @@ const ItemDetail = (props) => {
 	const { product, loading } = props;
 	const [show, setShow] = useState(true);
 	const [count, setCount] = useState();
-	const { addProduct, products, isInList } = useContext(contexto);
-
-	const datosComprador = {
-		nombre: 'diego',
-		apellido: 'gomex',
-		email: 'diegokpo97@hotmail.com'
-	}
+	const { addProduct } = useContext(contexto);
 
 	const onAdd = (count) => {
-
 		setCount(count);
 		if (count > 0) {
 			addProduct(product, count);

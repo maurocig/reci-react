@@ -1,12 +1,12 @@
-import { useContext, useState } from 'react';
-import style from './Cart.module.css'
-import { contexto } from '../../Context/CartContext';
-import { Link } from 'react-router-dom';
+import { useContext } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { contexto } from '../../Context/CartContext';
+import style from './Cart.module.css';
 
 
 export default function Cart() {
-	const { products, removeProduct, calcularTotal, total } = useContext(contexto);
+	const { products, removeProduct, total } = useContext(contexto);
 
 
 	console.log(products);
@@ -27,7 +27,7 @@ export default function Cart() {
 											{item.type === 'carrocerias' && 'Carrocería '}
 											{item.type === 'equipos' && 'Equipo '}
 											{item.type === 'accesorios' && 'Accesorio '}
-											{item.title.toUpperCase()} {item.brand}
+											{item.title} {item.brand}
 										</span>
 										<span className={style.itemQty}><strong>{item.qty}</strong> {item.qty > 1 ? 'unidades' : 'unidad'} </span>
 									</div>

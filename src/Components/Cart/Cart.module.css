@@ -20,6 +20,10 @@
 	color: black;
 }
 
+.container h3 {
+	padding: 20px 0;
+}
+
 .ulContainer li {
 	padding: 2rem;
 	border-bottom: solid 1px darkgray;
@@ -60,12 +64,12 @@
 }
 
 .itemQty {
-	width: 15%;
+	width: fit-content;
 	text-align: start;
 }
 
 .itemQty strong {
-	margin-right: 1rem;
+	margin-right: 0.3rem;
 }
 
 .ulResumen {
@@ -91,4 +95,9 @@ h3 {
 	color: var(--danger-color);
 	font-size: 1.2rem;
 	cursor: pointer;
+	margin-left: 0.5rem;
+}
+
+a {
+	text-decoration: none;
 }

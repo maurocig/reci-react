@@ -1,5 +1,5 @@
-import React, { useEffect, useState, createContext } from 'react';
-import { doc, addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
+import React, { createContext, useEffect, useState } from 'react';
 import { db } from '../firebase/firebase';
 
 export const contexto = createContext();
@@ -12,7 +12,7 @@ const CustomProvider = ({ children }) => {
 	const [idVenta, setIdVenta] = useState('default');
 
 	useEffect(() => {
-		console.log(products)
+		console.log(products);
 		itemCount();
 		calcularTotal();
 	}, [products])
@@ -61,7 +61,7 @@ const CustomProvider = ({ children }) => {
 	function calcularTotal() {
 		let total = 0;
 		products.map((p) => {
-			total += (p.price * p.qty);
+			return total += (p.price * p.qty);
 		})
 		console.log(total);
 		setTotal(total);

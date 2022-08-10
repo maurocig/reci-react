@@ -1,10 +1,28 @@
-import React from "react";
-import styles from './Navbar.module.css'
-import logo from '../../assets/reci.png'
-import { CartWidget } from "../CartWidget/CartWidget";
-import { Link, NavLink } from 'react-router-dom';
+import { React, useContext, useEffect, useState } from "react";
+import { NavLink } from 'react-router-dom';
+// import menuIcon from '../../assets/menu-icon/icons8-menu-24.svg';
 
-const Navbar = () => {
+import { FiMenu } from 'react-icons/fi';
+import { MdClose } from 'react-icons/md';
+import logo from '../../assets/reci.png';
+import { contexto } from '../../Context/CartContext';
+import { CartWidget } from "../CartWidget/CartWidget";
+import style from './Navbar.module.css';
+
+export default function Navbar() {
+	const { cantidadItems } = useContext(contexto);
+
+	const [isNavExpanded, setIsNavExpanded] = useState(false);
+	const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+	useEffect(() => {
+
+		const changeWidth = () => {
+			setScreenWidth(window.innerWidth);
+		}
+		window.addEventListener('resize', changeWidth)
+
+	}, []);
 
 	const categories = [
 		{ name: 'equipos', id: 0, route: '/productos/equipos' },
@@ -13,25 +31,45 @@ const Navbar = () => {
 	]
 
 	return (
-		<nav className={styles.nav}>
-			<NavLink to='/' className={styles.logoContainer}>
+		<nav className={style.nav}>
+			<div className={style.logoContainer}>
 				<img src={logo} alt="" id="imagen" />
-			</NavLink>
-			{/* <h1>Reci Importaciones</h1> */}
-			<div className={styles.navUl}>
-				{
-					categories.map((category) => {
-						return <NavLink key={category.id} to={category.route}>{category.name}</NavLink>
-					})
-				}
-				<NavLink to="/contacto">Nosotros</NavLink>
 			</div>
-			<NavLink style={{ 'textDecoration': 'none' }} to="/cart">
-				<CartWidget />
-			</NavLink>
-			{/* <a href="#!" id="carrito"><img src={ShoppingCartIcon} alt="" /></a> */}
-		</nav>
+			<div className={style.navRight}>
+
+				{
+					(isNavExpanded || screenWidth > 800) && (
+						<ul className={style.primaryNavigation} id="primary-navigation">
+							{categories.map((category) => {
+								return (
+									<li>
+										<NavLink className={style.navLink} key={category.id} to={category.route}>{category.name}</NavLink>
+									</li>
+								);
+							})}
+							<li>
+								<NavLink className={style.navLink} to="/contacto">Nosotros</NavLink>
+							</li>
+						</ul>
+					)
+				}
+
+
+				{
+					cantidadItems > 0
+					&& (
+						<NavLink className={style.cartWidgetLink} to="/cart">
+							<CartWidget />
+						</NavLink>
+					)
+				}
+				<button className={style.mobileNavToggle} onClick={() => setIsNavExpanded(!isNavExpanded)} aria-controls="primary-navigation" aria-expanded="false">
+					{
+						isNavExpanded ? <MdClose className={style.navCloseIcon} />
+							: <FiMenu className={style.navToggleIcon} />
+					}
+				</button>
+			</div>
+		</nav >
 	)
 }
-
-export default Navbar;

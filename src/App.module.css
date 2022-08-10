@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600&display=swap');
+
 .App {
 	text-align: center;
 }
@@ -11,6 +13,7 @@ body {
 	--bright-bg-color: rgb(232, 232, 232);
 	--danger-color: hsl(000, 55%, 36%);
 	--shadow-light: 2px 2px 3px hsla(0, 0%, 0, 0.7);
+	--condensed-font: 'Barlow Semi Condensed', sans-serif;
 
 	/* background-color: var(--main-bg-color); */
 	background-color: var(--main-bg-color);
