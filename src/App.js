@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CustomProvider from '../src/Context/CartContext';
 import style from './App.module.css';
@@ -9,6 +10,9 @@ import UserRegForm from './Components/UserRegForm/UserRegForm';
 
 
 function App({ name, children, app }) {
+	useEffect(() => {
+		document.title = 'Reci Importaciones';
+	}, [])
 	return (
 		<BrowserRouter style={style}>
 			<CustomProvider>

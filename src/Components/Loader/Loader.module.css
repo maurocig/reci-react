@@ -1,3 +1,6 @@
 .container {
 	color: white;
+	display: flex;
+	width: 80%;
+	justify-items: center;
 }
