@@ -1,8 +1,8 @@
-import style from './UserRegForm.module.css';
 import { contexto } from '../../Context/CartContext';
+import Loader from '../Loader/Loader';
+import style from './UserRegForm.module.css';
 
-import { useState } from 'react';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 
 
@@ -42,9 +42,10 @@ export default function UserRegForm() {
 				show
 					?
 					< >
-						<h3>Compra exitosa</h3>
-						{/* <Loader loading={loading} /> */}
-						<p>Id de venta: <strong>{idVenta}</strong></p>
+						<h3>Su compra fue realizada</h3>
+						{idVenta === 'default' ? <Loader loading={loading} />
+							: <p>Id de venta: <strong>{idVenta}</strong></p>
+						}
 					</>
 
 					:
