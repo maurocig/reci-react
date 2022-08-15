@@ -1,9 +1,9 @@
-import { useState, useContext } from 'react';
-import ItemCount from "../ItemCount/ItemCount";
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
-import style from './ItemDetail.module.css';
 import { contexto } from '../../Context/CartContext';
+import ItemCount from "../ItemCount/ItemCount";
 import Loader from '../Loader/Loader';
+import style from './ItemDetail.module.css';
 
 const ItemDetail = (props) => {
 	const { product, loading } = props;
@@ -17,34 +17,36 @@ const ItemDetail = (props) => {
 			addProduct(product, count);
 			setShow(false);
 		}
-
-		// isInList(product.id) ? alert('ese item ya está en el carrito')
-		// 	: addProduct(product, count);
 	}
 
 
 	return (
 		<div className={style.detailContainer}>
-			<h1>ITEM DETAIL</h1>
-			<Loader loading={loading} />
-			<h2>{product.title}</h2>
+			{loading && <Loader loading={loading} />}
+
 			<div className={style.pictureContainer}>
 				<img src={product.pictureUrl} alt="" />
 			</div>
 
-			{/* solo funca con fake store api */}
-			<img src={product.image} alt="" />
-
-			<p>{product.description}</p>
-			{
-				show
-					? <ItemCount stock={product.stock} onAdd={onAdd} />
-					:
-					<>
-						<h2>Agregaste {count} items.</h2>
-						<Link to='/cart'> <button>Finalizar Compra</button></Link>
-					</>
-			}
+			<div className={style.infoContainer}>
+				<h2>
+					{product.type === 'carrocerias' && 'Carrocería '}
+					{product.type === 'equipos' && 'Equipo '}
+					{product.type === 'accesorios' && 'Accesorio '}
+					{product.brand} {product.title}
+				</h2>
+				<p>{product.description}</p>
+				<p><strong>{`USD $${product.price}`}</strong></p>
+				{
+					show
+						? <ItemCount stock={product.stock} onAdd={onAdd} />
+						:
+						<>
+							<h3 className={style.onAddConfirmation}>Agregaste {count} items.</h3>
+							<Link to='/cart'> <button>Finalizar Compra</button></Link>
+						</>
+				}
+			</div>
 		</div>
 	)
 }

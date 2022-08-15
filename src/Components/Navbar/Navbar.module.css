@@ -9,7 +9,6 @@
 	box-shadow: 2px 1px 3px 4px rgba(0 0 0 10%);
 	height: 50px;
 	background-color: var(--bright-bg-color);
-	/* border: solid red; */
 	overflow-x: hidden;
 }
 
@@ -27,7 +26,6 @@
 .primaryNavigation {
 	display: flex;
 	justify-content: space-between;
-	/* gap: 1.5rem; */
 		gap: min(2rem, 3vw);
 	align-items: center;
 	list-style: none;
@@ -47,11 +45,9 @@
 .cartWidgetLink {
 	text-decoration: none;
 	display: flex;
-	/* margin-right: 3rem; */
 }
 
 .logoContainer {
-	/* width: 40px; */
 	height: 70%;
 	display: flex;
 	align-content: center;
@@ -61,7 +57,6 @@
 }
 
 .mobileNavToggle {
-	/* border: solid green; */
 	display: none;
 	place-content: center;
 	background-repeat: no-repeat;
@@ -86,7 +81,7 @@
 	color: white;
 }
 
-nav .logoContainer img {
+.logoImg, a {
 	height: 100%;
 	object-fit: contain;
 }
@@ -109,20 +104,17 @@ ShoppingCartIcon {
 		gap: 2rem;
 		background-color: var(--main-bg-color);
 		z-index: 999;
-		/* transform: translateX(100%); */
 	}
 
 	@supports (backdrop-filter: blur(1.9rem)) {
 		.primaryNavigation{
 			background: hsl(220, 55%, 16%, 0.7);
-				/* backdrop-filter: blur(1.9rem); */
 				backdrop-filter: blur(1rem);
 		}
 	}
 
 	.primaryNavigation li {
 		margin: 0;
-		/* padding: 1rem; */
 	}
 	
 	.navLink{

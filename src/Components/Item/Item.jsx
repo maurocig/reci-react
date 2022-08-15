@@ -1,24 +1,24 @@
-import React, { useContext } from 'react';
-import styles from './Item.module.css';
+import React from 'react';
 import { Link } from 'react-router-dom';
-// import { contexto } from '../Context/Context';
+import style from './Item.module.css';
 
 const Item = ({ item, children }) => {
 
-	// const resultado = useContext(contexto); // esto recibe lo que mandé por props en Context.jsx.
-
 	return (
-		<div className={styles.card}>
-			<h4>{item.title}</h4>
+		<div className={style.card}>
+			<h3>
+				{item.type === 'carrocerias' && `${item.brand} `}
+				{item.title}
+			</h3>
 
-			<div className={styles.itemThumbnail}>
+			<div className={style.itemThumbnail}>
 				<img src={item.pictureUrl} alt="" />
 			</div>
 
 			<p>{item.description}</p>
 
-			<Link to={`/items/${item.id}`}>
-				<button>Ver más</button>
+			<Link className={style.btnMoreLink} to={`/items/${item.id}`}>
+				<button className={style.btnMore}>Ver más</button>
 			</Link>
 		</div>
 	)

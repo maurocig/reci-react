@@ -8,7 +8,6 @@ import style from './Cart.module.css';
 export default function Cart() {
 	const { products, removeProduct, total } = useContext(contexto);
 
-
 	console.log(products);
 	return (
 		<div className={style.container}>

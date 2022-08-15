@@ -9,6 +9,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	justify-content: start;
 	opacity: 0.90;
 	transition: all 800ms;
 }
@@ -21,9 +22,35 @@
 .itemThumbnail {
 	display: flex;
 	justify-content: center;
+	aspect-ratio: 1.2;
+	min-height: 220px;
 }
 
 .itemThumbnail img {
 	object-fit: contain;
 	width: 100%;
+}
+
+.btnMoreLink {
+	padding:0;
+	display: flex;
+	margin: 0;
+	height: 50px;
+	justify-items: center;
+	margin-top: auto;
+}
+
+.btnMore {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+h3 {
+	font-size: 1.5rem;
+	font-family: var(--condensed-font);
+	color: var(--main-bg-color);
+	margin-bottom: 1rem;
+	padding: 0;
 }

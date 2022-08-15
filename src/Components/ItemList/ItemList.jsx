@@ -1,6 +1,6 @@
 import Item from '../Item/Item';
-import styles from './ItemList.module.css';
 import Loader from '../Loader/Loader';
+import styles from './ItemList.module.css';
 
 const ItemList = (props) => {
 	const { products, loading, categoria } = props;
@@ -10,8 +10,14 @@ const ItemList = (props) => {
 			<Loader loading={loading} />
 			{
 				categoria
-					? <h3>{categoria}</h3>
-					: <h3>Productos</h3>
+					? (
+						<h1>
+							{categoria === 'carrocerias' && 'Carrocerías'}
+							{categoria === 'equipos' && 'Equipos'}
+							{categoria === 'accesorios' && 'Accesorios'}
+						</h1>
+					)
+					: <h1>Productos</h1>
 			}
 			<div className={styles.gridContainer}>
 				{

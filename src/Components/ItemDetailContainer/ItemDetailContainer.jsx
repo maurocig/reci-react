@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
-import ItemDetail from '../ItemDetail/ItemDetail';
-import ProductosIniciales from '../../assets/productosIniciales.json'
+import { collection, doc, getDoc } from 'firebase/firestore';
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { db } from '../../firebase/firebase';
-import { getDoc, collection, doc, query, where } from 'firebase/firestore'
+import ItemDetail from '../ItemDetail/ItemDetail';
 
 const ItemDetailContainer = ({ props }) => {
 	const [product, setProduct] = useState([]);
@@ -13,7 +12,6 @@ const ItemDetailContainer = ({ props }) => {
 	useEffect(() => {
 		const productCollection = collection(db, 'productosIniciales');
 		const refDoc = doc(productCollection, itemId);
-		// const refDoc = query(productCollection, where('id', '==', itemId));
 		getDoc(refDoc)
 			.then((result) => {
 				console.log(result)
@@ -27,23 +25,6 @@ const ItemDetailContainer = ({ props }) => {
 			})
 			.catch((err) => console.log(err))
 
-		// 		const getProduct = async () => {
-		// 			try {
-		// 				/* // FAKE STORE API */
-		// 				/* const response = await fetch('https://fakestoreapi.com/products'); */
-		// 				/* const data = await response.json(); */
-		// 				/* setProduct(data[0]); */
-		// 
-		// 				const productoDetalle = await ProductosIniciales.find((producto) => {
-		// 					return producto.id === parseInt(itemId);
-		// 				})
-		// 				setProduct(productoDetalle);
-		// 			}
-		// 			catch (err) {
-		// 				console.log(err)
-		// 			}
-		// 		}
-		// 		getProduct();
 	}, [])
 
 	return (

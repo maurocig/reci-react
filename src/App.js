@@ -1,14 +1,11 @@
-// import logo from './logo.svg';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import CustomProvider from '../src/Context/CartContext';
 import style from './App.module.css';
 import Cart from './Components/Cart/Cart';
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import ItemListContainer from './Components/ItemListContainer/ItemListContainer';
 import Navbar from './Components/Navbar/Navbar';
 import UserRegForm from './Components/UserRegForm/UserRegForm';
-
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import CustomProvider from '../src/Context/CartContext';
 
 
 function App({ name, children, app }) {

@@ -23,7 +23,7 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
 			{/* <h2>Item Count</h2> */}
 			<div className={style.counter}>
 				<AiFillMinusCircle className={style.btnCount} onClick={substractOne} />
-				<h3>{count}</h3>
+				<h2>{count}</h2>
 				<AiFillPlusCircle className={style.btnCount} onClick={addOne} />
 			</div>
 			<button className={style.btnAdd} onClick={() => onAdd(count)}>Agregar al carrito</button>

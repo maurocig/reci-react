@@ -68,12 +68,6 @@ const CustomProvider = ({ children }) => {
 		return total;
 	}
 
-	// const datosComprador = {
-	// 	nombre: 'Juan',
-	// 	apellido: 'Perez',
-	// 	email: 'juan@gmail.com'
-	// }
-
 	const finalizarCompra = (datosComprador) => {
 		const ventasCollection = collection(db, 'ventas');
 		addDoc(ventasCollection, {

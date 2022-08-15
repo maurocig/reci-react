@@ -1,6 +1,5 @@
 import { React, useContext, useEffect, useState } from "react";
 import { NavLink } from 'react-router-dom';
-// import menuIcon from '../../assets/menu-icon/icons8-menu-24.svg';
 
 import { FiMenu } from 'react-icons/fi';
 import { MdClose } from 'react-icons/md';
@@ -37,7 +36,9 @@ export default function Navbar() {
 	return (
 		<nav className={style.nav}>
 			<div className={style.logoContainer}>
-				<img src={logo} alt="" id="imagen" />
+				<a href="/">
+					<img className={style.logoImg} src={logo} alt="" id="imagen" />
+				</a>
 			</div>
 			<div className={style.navRight}>
 
@@ -46,7 +47,7 @@ export default function Navbar() {
 						<ul className={style.primaryNavigation} id="primary-navigation">
 							{categories.map((category) => {
 								return (
-									<li>
+									<li key={category.name}>
 										<NavLink onClick={toggleNav} className={style.navLink} key={category.id} to={category.route}>{category.name}</NavLink>
 									</li>
 								);

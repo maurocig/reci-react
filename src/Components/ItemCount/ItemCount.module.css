@@ -8,21 +8,23 @@ h3 {
 	margin: auto;
 	margin-top: 1rem;
 	gap: 1rem;
-	padding: 1rem;
+	padding: 1rem 0;
 	border: solid 1px darkgray;
 	border-radius: 4px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-direction: row;
-	width: 80%;
+	width: 100%;
 	max-width: 400px;
 }
 
 .itemCountWrapper h2 {
 	color: white;
-	display: block;
-	width: 100%;
+	display: flex;
+	font-size: 1.5rem;
+	margin-inline: 1rem;
+	padding: 0;
 }
 
 .counter {
@@ -31,20 +33,17 @@ h3 {
 	align-items: center;
 	margin-inline: 1rem;
 	padding: 0;
-	/* border: solid red; */
-	/* height: 2rem; */
 }
 
 .btnCount {
 	margin: 0;
 	font-size: 1.3rem;
-	color: rgb(228, 228, 61);	
+	color: rgb(229, 169, 30);	
 }
 
 .btnAdd {
 	width: 10rem;
 	padding-inline: 1rem;
-	/* height: 3rem; */
 }
 
 @media (max-width: 600px){
