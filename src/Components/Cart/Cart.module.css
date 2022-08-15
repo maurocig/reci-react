@@ -30,23 +30,22 @@
 	display: flex;
 	align-items: center;
 	height: 80px;
-	/* width: 100%; */
 }
 
 .imgContainer {
 	border: solid 2px darkgray;
+		height: 60px;
 	border-radius: 6px;
 	width: 90px;
-	height: 100%;
 	margin-right: 3rem;
 	display: flex;
-	place-items: center;
 	background-color: white;
 	padding: 0.5rem;
 }
 
-.imgContainer img {
+.image{
 	object-fit: contain;
+	object-position: center !important;
 	width: 100%;
 	cursor: pointer;
 }
@@ -55,13 +54,10 @@
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	/* border: solid red; */
 }
 
 .itemText span {
-	/* padding: 3rem; */
 	text-align: start;
-	/* border: solid blue; */
 }
 
 .itemQty {
@@ -75,8 +71,6 @@
 
 .ulResumen {
 	color: black;
-	/* display: flex; */
-	/* flex-direction: column; */
 	text-align: end;
 	padding: 2rem;
 	font-size: 1.3rem;
@@ -103,6 +97,11 @@ a {
 	text-decoration: none;
 }
 
+li * {
+	display: flex;
+	align-items: center;
+}
+
 @media (max-width: 700px) {
 	.imgContainer {
 	margin-right: 1rem;
@@ -116,18 +115,5 @@ a {
 		padding: 1rem;
 	}
 
-	/* .itemText { */
-	/* 	display: flex; */
-	/* 	flex-direction: column; */
-	/* } */
 	
-	
-	li * {
-		display: flex;
-		align-items: center;
-	}
-	
-	.imgContainer {
-		height: 60px;
-	}
 }

@@ -20,7 +20,7 @@ export default function Cart() {
 								<li key={index}>
 									<div className={style.imgContainer}>
 										<Link to={`/items/${item.id}`}>
-											<img src={item.pictureUrl} alt="" />
+											<img src={item.pictureUrl} className={style.image} alt="" />
 										</Link>
 									</div>
 									<div className={style.itemText}>

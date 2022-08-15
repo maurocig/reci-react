@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react';
 import { SpinnerCircularSplit } from 'spinners-react';
 import style from './Loader.module.css';
 
