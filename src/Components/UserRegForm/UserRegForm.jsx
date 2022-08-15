@@ -14,7 +14,6 @@ export default function UserRegForm() {
 		email: ''
 	});
 	const [show, setShow] = useState(false);
-	const [loading, setLoading] = useState(true);
 
 	const { finalizarCompra, idVenta } = useContext(contexto);
 
@@ -32,7 +31,6 @@ export default function UserRegForm() {
 		finalizarCompra(datos)
 		setShow(true);
 		console.log(`datos: ${datos}`)
-
 	}
 
 
@@ -42,8 +40,8 @@ export default function UserRegForm() {
 				show
 					?
 					< >
-						<h3>Su compra fue realizada</h3>
-						{idVenta === 'default' ? <Loader loading={loading} />
+						<h3>Su compra se realizó exitosamente.</h3>
+						{idVenta === 'default' ? <Loader loading={true} />
 							: <p>Id de venta: <strong>{idVenta}</strong></p>
 						}
 					</>
