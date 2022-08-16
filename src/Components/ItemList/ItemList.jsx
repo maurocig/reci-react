@@ -19,6 +19,8 @@ const ItemList = (props) => {
 							</h1>
 							<h2>
 								{categoria === 'equipos' && 'Línea Thermo King'}
+								{categoria === 'carrocerias' && 'Línea Liderkit'}
+								{categoria === 'accesorios' && 'Línea Cargotrack'}
 							</h2>
 						</>
 					)

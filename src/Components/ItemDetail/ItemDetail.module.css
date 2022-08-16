@@ -29,6 +29,7 @@
 h2 {
 	margin: 0;
 	font-size: 2rem;
+	color: white !important;
 	font-family: var(--condensed-font);
 }
 
