@@ -3,11 +3,21 @@
 		grid-template-columns: 1fr;
 		justify-items: center;
 		gap: 2rem;
+		margin-top: 2rem;
 	}
 
-	h1 {
+	h1, h2 {
 		color: white;
 		font-family: var(--condensed-font);
+		margin-bottom: 0.5rem;
+		font-size: 2.6rem;
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	
+	h2 {
+		font-size: 1.5rem;
+		/* font-family: Arial, Helvetica, sans-serif; */
+		color: lightgray;
 	}
 
 	@media (min-width: 800px) {

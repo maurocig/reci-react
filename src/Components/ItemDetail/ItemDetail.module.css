@@ -11,14 +11,13 @@
 .pictureContainer {
 	max-height: 60vh;
 	display: flex;
-	justify-content: flex-start;
 }
 
 .pictureContainer img {
 	object-fit: contain;
 	height: 100%;
 	width: 100%;
-	object-position: top;
+	object-position: center;
 }
 
 .infoContainer {

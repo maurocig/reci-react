@@ -11,11 +11,16 @@ const ItemList = (props) => {
 			{
 				categoria
 					? (
-						<h1>
-							{categoria === 'carrocerias' && 'Carrocerías'}
-							{categoria === 'equipos' && 'Equipos'}
-							{categoria === 'accesorios' && 'Accesorios'}
-						</h1>
+						<>
+							<h1>
+								{categoria === 'carrocerias' && 'Carrocerías'}
+								{categoria === 'equipos' && 'Equipos de Frío'}
+								{categoria === 'accesorios' && 'Accesorios'}
+							</h1>
+							<h2>
+								{categoria === 'equipos' && 'Línea Thermo King'}
+							</h2>
+						</>
 					)
 					: <h1>Productos</h1>
 			}
