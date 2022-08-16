@@ -13,7 +13,6 @@ const ItemListContainer = (props) => {
 
 	const [products, setProducts] = useState([]);
 	const [loading, setLoading] = useState(true);
-
 	useEffect(() => {
 
 		const productCollection = collection(db, 'productosIniciales');
