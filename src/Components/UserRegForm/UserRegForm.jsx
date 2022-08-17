@@ -40,7 +40,7 @@ export default function UserRegForm() {
 				show
 					?
 					< >
-						<h3>Su compra se realizó exitosamente.</h3>
+						<h3 className={style.titleSuccess}>Su compra se realizó exitosamente.</h3>
 						{idVenta === 'default' ? <Loader loading={true} />
 							: <p>Id de venta: <strong>{idVenta}</strong></p>
 						}

@@ -10,9 +10,9 @@ input {
 	font-size: large;
 }
 
-h3 {
-	color: white;
-	font-size: 1.5rem;
+.titleSuccess {
+	color: white !important;
+	font-size: 1.8rem;
 	margin-top: 1rem;
 }
 
