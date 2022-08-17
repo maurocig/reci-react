@@ -1,6 +1,6 @@
 import Item from '../Item/Item';
 import Loader from '../Loader/Loader';
-import styles from './ItemList.module.css';
+import style from './ItemList.module.css';
 
 const ItemList = (props) => {
 	const { products, loading, categoria } = props;
@@ -17,7 +17,7 @@ const ItemList = (props) => {
 								{categoria === 'equipos' && 'Equipos de Frío'}
 								{categoria === 'accesorios' && 'Accesorios'}
 							</h1>
-							<h2>
+							<h2 className={style.subHeader}>
 								{categoria === 'equipos' && 'Línea Thermo King'}
 								{categoria === 'carrocerias' && 'Línea Liderkit'}
 								{categoria === 'accesorios' && 'Línea Cargotrack'}
@@ -26,7 +26,7 @@ const ItemList = (props) => {
 					)
 					: <h1>Productos</h1>
 			}
-			<div className={styles.gridContainer}>
+			<div className={style.gridContainer}>
 				{
 					products.map((item) => {
 						return (

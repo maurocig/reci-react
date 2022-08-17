@@ -28,8 +28,8 @@
 
 h2 {
 	margin: 0;
-	font-size: 2rem;
-	color: white !important;
+	font-size: 1.8rem;
+	color: white;
 	font-family: var(--condensed-font);
 }
 
