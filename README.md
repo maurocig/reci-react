@@ -7,3 +7,5 @@ Al agregar los productos al carrito y finalizar la compra, se le pide nombre y e
 
 Aunque probablemente los productos no son los adecuados para un ecommerce, la idea era crear un catálogo donde se mostraran los productos y el comprador pueda informarse acerca de los mismos.
 
+
+Deploy: https://reci.netlify.app/

@@ -24,8 +24,7 @@ const ItemDetailContainer = ({ props }) => {
 				console.log(producto)
 			})
 			.catch((err) => console.log(err))
-
-	}, [])
+	})
 
 	return (
 		<div className="container">
